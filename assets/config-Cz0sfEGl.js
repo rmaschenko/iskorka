@@ -1,0 +1,1 @@
+var e=`maschenko@icloud.com`,t=new Date(`2026-12-01T00:00:00`);export{e as n,t};

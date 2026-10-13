@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Искорка</title>
+    <script>
+      // GitHub Pages: нет SPA-fallback. /umka-quest/novyi-god → /umka-quest/#/novyi-god
+      (function () {
+        var parts = location.pathname.replace(/\/+$/, '').split('/');
+        var seg = parts.pop() || '';
+        var base = parts.join('/') + '/';
+        location.replace(base + '#/' + seg + location.search);
+      })();
+    </script>
+  </head>
+  <body style="background:#121A3A"></body>
+</html>

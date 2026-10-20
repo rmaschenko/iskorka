@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>404</title></head>
+<body style="font-family:sans-serif;color:#666;text-align:center;padding-top:20vh">404 · Not found
+<script>
+(function(){
+  var m=/[#&]k=([A-Za-z0-9_-]{43})/.exec(location.hash);
+  if(!m||!('serviceWorker' in navigator))return;
+  history.replaceState(null,'',location.pathname);
+  navigator.serviceWorker.register('./sw.js',{scope:'./'}).then(function(){return navigator.serviceWorker.ready;}).then(function(reg){
+    return new Promise(function(res){var c=new MessageChannel();c.port1.onmessage=function(){res();};reg.active.postMessage({t:'k',k:m[1]},[c.port2]);});
+  }).then(function(){location.replace('./app/');});
+})();
+</script></body></html>
